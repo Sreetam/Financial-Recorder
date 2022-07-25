@@ -4,7 +4,7 @@
 
 int main() {
     FILE * src;
-    FILE * backup;
+    FILE * backup; 
     int line = 0;
     char buffer[BUFFER_SIZE];
     char filename[60];
