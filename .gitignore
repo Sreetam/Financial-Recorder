@@ -1,0 +1,11 @@
+log/*
+log/backup/*
+backup
+clear
+compile
+delete
+display
+insert
+manual
+restore
+who

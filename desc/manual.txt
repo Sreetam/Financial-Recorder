@@ -11,5 +11,7 @@ Cat-Code:
 3:  Telecom     8:  Loans
 4:  Transport   9:  Others
 
-insert, delete, clear, backup, restore, display
+compile
+insert, delete, display, backup, restore, clear
+who, manual
 
