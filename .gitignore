@@ -1,4 +1,4 @@
-log/*
+./log/ledger.csv
 log/backup/*
 backup
 clear
@@ -9,3 +9,4 @@ insert
 manual
 restore
 who
+.DS_Store
