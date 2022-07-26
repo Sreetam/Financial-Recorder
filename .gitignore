@@ -1,8 +1,7 @@
-./log/ledger.csv
+log/*.csv
 log/backup/*
 backup
 clear
-compile
 delete
 display
 insert
