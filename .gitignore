@@ -1,5 +1,5 @@
-log/*.csv
-log/backup/*
+#log/*.csv
+#log/backup/*
 backup
 clear
 delete
