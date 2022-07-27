@@ -9,3 +9,4 @@ manual
 restore
 who
 .DS_Store
+get-pip.py
