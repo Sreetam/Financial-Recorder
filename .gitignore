@@ -1,6 +1,6 @@
 #log/*.csv
 #log/backup/*
-#backup
+backup
 clear
 delete
 display
