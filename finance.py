@@ -3,32 +3,32 @@ import numpy as np
 import datetime
 import os
 
-elss = 30996.00
+elss = 31079.00
 gold = 2
 silver = 20
 bank = {
-    'sbi':20304.70,
-    'fed':11359.65,
+    'sbi':20000.70,
+    'fed':3640.65,
     'uco':5000.08,
     'hdfc':12000.00,
     'ubi':6000.71,
     'ippb':1000.00,
     'posb':1040.46,
-    'cash':700,
+    'cash':590,
     'lent':21500.0
 }
 credit = {
-    'onecard':2467.95-1985-159,
-    'icici':25000.0-8982.71-8147.86-445,
+    'onecard':467.95-1985-159,
+    'icici':25000.0-10567.29-8147.86-445,
     'lazypay':1407.0,
     'amazonpl':655.0-655,
     'personal':653.5-0-446.66
 }
 rent = 15977.70
-budget = 64000
+budget = 63000
 fd = 15000.00
-goldrate = 52953.0  #https://ibjarates.com
-silverrate = 61320.0
+goldrate = 52713.0  #https://ibjarates.com
+silverrate = 62266.0
 bank_mab = 16000
 in_hand = 70981.00
 
