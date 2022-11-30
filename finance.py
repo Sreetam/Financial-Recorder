@@ -8,21 +8,21 @@ gold = 2
 silver = 20
 bank = {
     'sbi':20000.70,
-    'fed':3640.65,
+    'fed':2611.57,
     'uco':5000.08,
-    'hdfc':12000.00,
-    'ubi':6000.71,
+    'hdfc':12501.00,
+    'ubi':5000.71,
     'ippb':1000.00,
     'posb':1040.46,
-    'cash':590,
-    'lent':21500.0
+    'cash':100,
+    'lent':16000.0
 }
 credit = {
-    'onecard':467.95-1985-159,
-    'icici':25000.0-10567.29-8147.86-445,
+    'onecard':0,
+    'icici':25000.0-22288.80,
     'lazypay':1407.0,
-    'amazonpl':655.0-655,
-    'personal':653.5-0-446.66
+    'amazonpl':655,
+    'personal':0
 }
 rent = 15977.70
 budget = 63000
@@ -51,6 +51,7 @@ for i in np.unique(df.category.values):
 left = budget - np.sum(df.amount.values)
 mon = pd.Period(datetime.datetime.now().date().strftime("%Y-%m-%d")).days_in_month
 daysleft = mon - datetime.datetime.now().date().day
+daysleft = 31
 
 # CALCULATE FINANCES
 
