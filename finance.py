@@ -3,32 +3,38 @@ import numpy as np
 import datetime
 import os
 
-elss = 31079.00
-gold = 2
-silver = 20
 bank = {
-    'sbi':20000.70,
-    'fed':2611.57,
+    'sbi':30000.70,
+    'fed':15549.57,
     'uco':5000.08,
     'hdfc':12501.00,
-    'ubi':5000.71,
-    'ippb':1000.00,
+    'ubi':10000.71,
+    'ippb':11042.00,
     'posb':1040.46,
     'cash':100,
     'lent':16000.0
 }
 credit = {
     'onecard':0,
-    'icici':25000.0-22288.80,
-    'lazypay':1407.0,
-    'amazonpl':655,
+    'icici':25000.0-21904.35,
+    'lazypay':0,
+    'paytmpl':0,
+    'amazonpl':0,
     'personal':0
 }
+goldrate = 53120.0  #https://ibjarates.com
+silverrate = 63683.0
+assets = {
+    'elss':31544.00,
+    'index':5000.00,
+    'gold':2 * goldrate / 10,
+    'silver':20 * silverrate / 1000,
+    'fd':15000
+}
+
 rent = 15977.70
 budget = 63000
-fd = 15000.00
-goldrate = 52713.0  #https://ibjarates.com
-silverrate = 62266.0
+
 bank_mab = 16000
 in_hand = 70981.00
 
@@ -51,13 +57,11 @@ for i in np.unique(df.category.values):
 left = budget - np.sum(df.amount.values)
 mon = pd.Period(datetime.datetime.now().date().strftime("%Y-%m-%d")).days_in_month
 daysleft = mon - datetime.datetime.now().date().day
-daysleft = 31
+# daysleft = 31
 
 # CALCULATE FINANCES
 
-goldworth = gold * goldrate / 10
-silverworth =  silver * silverrate / 1000
-investments = goldworth + silverworth + elss + fd
+investments = sum(assets.values())
 liabilities = sum(credit.values())
 eom = sum(bank.values()) - liabilities - left - bank_mab
 report = f"""EXPENSE REPORT
@@ -80,11 +84,11 @@ LIQUID AT END OF MONTH : {eom}
 LIQUID CONTRIBUTION : {in_hand - budget}
 
 Assets in bank:\t\t\tInvestments:
-SBI : {bank['sbi']}\t\t\tELSS : {elss}
-FED : {bank['fed']}\t\t\tGOLD : {goldworth}
-POS : {bank['posb']}\t\t\tSILV : {silverworth}
-UCO : {bank['uco']}\t\t\tFD   : {fd}
-HDF : {bank['hdfc']}
+SBI : {bank['sbi']}\t\t\tELSS : {assets['elss']}
+FED : {bank['fed']}\t\t\tINDX : {assets['index']}
+POS : {bank['posb']}\t\t\tGOLD : {assets['gold']}
+UCO : {bank['uco']}\t\t\tSILV : {assets['silver']}
+HDF : {bank['hdfc']}\t\t\tFD   : {assets['fd']}
 UBI : {bank['ubi']}
 CSH : {bank['cash']}
 LNT : {bank['lent']}
@@ -95,6 +99,7 @@ SBM 1 CC : {credit['onecard']}
 ICICI CC : {credit['icici']}
 AMAZN PL : {credit['amazonpl']}
 LZYPY PL : {credit['lazypay']}
+PAYTM PL : {credit['paytmpl']}
 PRSNL LN : {credit['personal']}
 TOTAL : {liabilities}
 """
