@@ -25,7 +25,7 @@ credit = {
 goldrate = 53120.0  #https://ibjarates.com
 silverrate = 63683.0
 assets = {
-    'elss':31544.00,
+    'elss':31751.00,
     'index':5000.00,
     'gold':2 * goldrate / 10,
     'silver':20 * silverrate / 1000,
